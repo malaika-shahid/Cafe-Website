@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Cup Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" type="button">Toggle Light/Dark Mode</button>
+        <h1>Welcome to Cozy Cup Cafe</h1>
+        <p id="opening-status" class="status"></p>
+        <p>Fresh coffee, delicious pastries, and a cozy place to relax.</p>
+    </header>
+
+    <main>
+        <article>
+            <h2>About Our Cafe</h2>
+            <p>Cozy Cup Cafe is a friendly neighborhood cafe serving freshly brewed coffee and handmade treats every day.</p>
+            <p id="extra-story" hidden>We carefully choose our ingredients and prepare every order with care. Whether you are studying, meeting friends, or taking a break, we are happy to welcome you!</p>
+            <button id="read-more" type="button">Read More</button>
+        </article>
+
+        <section>
+            <h2>Our Menu</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all" type="button">All</button>
+                <button class="filter-btn" data-category="drinks" type="button">Drinks</button>
+                <button class="filter-btn" data-category="pastries" type="button">Pastries</button>
+            </div>
+            <table id="menu-table">
+                <thead><tr><th>Menu Item</th><th>Category</th><th>Price</th></tr></thead>
+                <tbody>
+                    <tr data-category="drinks"><td>Espresso</td><td>Drinks</td><td>$3</td></tr>
+                    <tr data-category="drinks"><td>Cappuccino</td><td>Drinks</td><td>$5</td></tr>
+                    <tr data-category="pastries"><td>Croissant</td><td>Pastries</td><td>$4</td></tr>
+                    <tr data-category="pastries"><td>Blueberry Muffin</td><td>Pastries</td><td>$3</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Build Your Order</h2>
+            <p>Select the items you want:</p>
+            <div class="order-list">
+                <label><input type="checkbox" class="menu-choice" value="3"> Espresso — $3</label>
+                <label><input type="checkbox" class="menu-choice" value="5"> Cappuccino — $5</label>
+                <label><input type="checkbox" class="menu-choice" value="4"> Croissant — $4</label>
+                <label><input type="checkbox" class="menu-choice" value="3"> Blueberry Muffin — $3</label>
+            </div>
+            <p id="total">Total: $0</p>
+        </section>
+
+        <section>
+            <h2>Feedback / Contact Form</h2>
+            <form id="feedback-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="birth-year">Birth year:</label>
+                <input type="text" id="birth-year" placeholder="e.g. 2002">
+                <p id="discount-message" aria-live="polite"></p>
+
+                <label for="special-notes">Special order instructions (max 100 characters):</label>
+                <textarea id="special-notes" maxlength="100" rows="4" placeholder="Any special requests?"></textarea>
+                <p id="char-count">100 characters remaining</p>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <p id="form-message" aria-live="polite"></p>
+        </section>
+    </main>
+    <footer><p>© 2026 Cozy Cup Cafe</p></footer>
+</body>
+</html>
